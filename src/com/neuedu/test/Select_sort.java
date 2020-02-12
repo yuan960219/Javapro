@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 //选择排序
 public class Select_sort {
     public static void main(String[] args) {

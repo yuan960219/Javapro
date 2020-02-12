@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 public class Text_Shape {
     public static void main(String[] args) {
         Shape r1=new Rectangle(5,3,"red");

@@ -1,4 +1,4 @@
-package com.lianxi;
+package com.neuedu.lianxi2;
 
 import java.util.ArrayList;
 import java.util.List;

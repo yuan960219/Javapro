@@ -1,4 +1,4 @@
-package com.lianxi;
+package com.neuedu.lianxi2;
 
 public class Mybook {
     private String name;

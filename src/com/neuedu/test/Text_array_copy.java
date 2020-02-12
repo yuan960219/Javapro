@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 public class Text_array_copy {
     public static void main(String[] args) {
         Array_copy a1=new Array_copy();

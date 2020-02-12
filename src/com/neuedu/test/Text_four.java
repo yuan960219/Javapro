@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/4.
- */
 public class Text_four {
     public static void main(String[] args) {
      int [] array={0,1,2,3,4,5,6,7,8,9};

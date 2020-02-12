@@ -1,12 +1,9 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 //冒泡排序
 public class Bubble_sort {
     public static void main(String[] args) {
-        int []marray={10,24,52,34,55,15,91,46,78,100,30,69};
+        int []marray={10,9,52,34,67,15,1,46,78,91,30,19};
         for(int i=0;i<marray.length-1;i++){
             int flag=0;
             for(int j=0;j<marray.length-i-1;j++){

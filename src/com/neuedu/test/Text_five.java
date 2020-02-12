@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/4.
- */
 public class Text_five {
     public static void main(String[] args) {
     int a=3;

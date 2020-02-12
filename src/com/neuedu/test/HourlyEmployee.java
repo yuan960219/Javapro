@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/7.
- */
 public class HourlyEmployee extends ColaEmployee {
     public int hour_salar;
     public int month_hour;

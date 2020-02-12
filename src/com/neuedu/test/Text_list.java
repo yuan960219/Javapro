@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

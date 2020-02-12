@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/3.
- */
 public class Text {
     public static void main(String[] args) {
         Dog d1 = new Dog();

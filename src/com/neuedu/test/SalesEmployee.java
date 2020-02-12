@@ -1,8 +1,5 @@
-package com.neuedu;
+package com.neuedu.test;
 
-/**
- * Created by 超先生 on 2020/2/6.
- */
 public class SalesEmployee extends ColaEmployee{
     public int month_sellnumber;
     public double royalty_rate;
