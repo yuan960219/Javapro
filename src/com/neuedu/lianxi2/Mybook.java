@@ -1,5 +1,8 @@
 package com.neuedu.lianxi2;
 
+/**
+ * Created by 超先生 on 2020/2/10.
+ */
 public class Mybook {
     private String name;
     private Double price;

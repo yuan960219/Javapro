@@ -1,5 +1,9 @@
 package com.neuedu.lianxi2;
 
+/**
+ * Created by 超先生 on 2020/2/10.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +14,6 @@ public class Test {
     public static void main(String[] args) {
         inputData(list);
         menu();
-
  //       searchName(list,"书名5");
 //        deleteName(list,"书名6");
 //        addbook(list);

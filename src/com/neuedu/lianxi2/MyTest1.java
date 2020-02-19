@@ -18,7 +18,7 @@ public class MyTest1 {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url,username,password);
-            pstmt = con.prepareStatement("insert into Dog(name,age,gender) values('藏獒',5,0)");
+            pstmt = con.prepareStatement("insert into Dog(name,age,gender) values('牧羊犬',8,1)");
             int i = pstmt.executeUpdate();
             System.out.println(i);
         } catch (ClassNotFoundException e) {

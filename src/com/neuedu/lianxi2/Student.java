@@ -9,6 +9,22 @@ public class Student {
     private Integer age;
     private String grade;
 
+    public Student() {
+    }
+
+    public Student(String name, Integer age, String grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    public Student(Integer id, String name, Integer age, String grade) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
     public Integer getId() {
         return id;
     }
