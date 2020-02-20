@@ -62,4 +62,14 @@ public class Dog {
     public void setGender(Integer gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                '}';
+    }
 }

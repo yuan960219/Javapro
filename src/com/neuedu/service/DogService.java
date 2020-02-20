@@ -29,7 +29,7 @@ public class DogService implements IdogService {
 
     @Override
     public int del(int id) {
-        return 0;
+        return dogDao.del(id);
     }
 
     @Override

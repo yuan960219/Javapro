@@ -1,6 +1,9 @@
 package com.neuedu.util;
 
+import java.lang.reflect.Field;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 超先生 on 2020/2/19.
@@ -44,6 +47,43 @@ public class JdbcUtil {
         }
         return result;
     }
+    public static<T> List<T> executeQuery(String sql,Class<T>clz,Object...params){
+        List<T> list = new ArrayList<>();
+        Connection con = getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs =null;
+        try {
+            pstmt = con.prepareStatement(sql);
+            if(params != null){
+                for(int i = 0;i<params.length;i++){
+                    pstmt.setObject(i+1,params[i]);
+                }
+            }
+            rs = pstmt.executeQuery();
+            while(rs.next()){
+                T t = clz.newInstance();
+                Field[] fields = clz.getDeclaredFields();
+               /* rs.getInt("deptno");
+                rs.getString("dename");
+                rs.getString("loc");*/
+                for(Field f : fields){
+                   Object value = rs.getObject(f.getName());
+                   f.setAccessible(true);
+                   f.set(t,value);
+                }
+                list.add(t);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }finally{
+            close(con,pstmt,rs);
+        }
+        return list;
+    }
     static void close(Connection con,PreparedStatement pstmt){
         try {
             if(pstmt !=null)
@@ -63,4 +103,5 @@ public class JdbcUtil {
             e.printStackTrace();
         }
     }
+
 }

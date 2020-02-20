@@ -17,7 +17,7 @@ public class DogDao implements IdogDao {
 
     @Override
     public List<Dog> query() {
-        List<Dog> List = new ArrayList<>();
+        List<Dog> list = new ArrayList<>();
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -32,6 +32,7 @@ public class DogDao implements IdogDao {
                 dog.setName(rs.getString("name"));
                 dog.setAge(rs.getInt("age"));
                 dog.setGender(rs.getInt("gender"));
+                list.add(dog);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -49,15 +50,14 @@ public class DogDao implements IdogDao {
                 e.printStackTrace();
             }
         }
-        return List;
+        return list;
     }
 
     @Override
     public int add(Dog dog) {
         /*int i = 0;*/
-        String sql="insert into Dog(name,age,gender) values(?,?,?)";
         Object[] params ={dog.getName(),dog.getAge(),dog.getGender()};
-        int i = JdbcUtil.executeUpdate(sql,params);
+        int i = JdbcUtil.executeUpdate("insert into Dog(name,age,gender) values(?,?,?)",params);
        /* Connection con = null;
         PreparedStatement pstmt = null;
         try {
@@ -88,15 +88,14 @@ public class DogDao implements IdogDao {
     @Override
     public int update(Dog dog) {
         /*int i = 0;*/
-        String sql="update Dog setname=?,gender=?where id=?";
         Object[]params = {dog.getName(),dog.getAge(),dog.getGender(),dog.getId()};
-        int i = JdbcUtil.executeUpdate(sql,params);
+        int i = JdbcUtil.executeUpdate("update Dog set name=?,age=?,gender=? where id=?",params);
        /* Connection con = null;
         PreparedStatement pstmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
-            pstmt = con.prepareStatement("update Dog setname=?,gender=?where id=?");
+            pstmt = con.prepareStatement("update Dog set name=?,age=?,gender=? where id=?");
             pstmt.setString(1, dog.getName());
             pstmt.setInt(2, dog.getAge());
             pstmt.setInt(3, dog.getGender());
@@ -121,9 +120,8 @@ public class DogDao implements IdogDao {
     @Override
     public int del(int id) {
         /*int i = 0;*/
-        String sql = "delete from Dog where id=?";
-        Object[]params = {id};
-        int i =JdbcUtil.executeUpdate(sql,params);
+        Object[] params = {id};
+        int i =JdbcUtil.executeUpdate("delete from Dog where id=?",params);
        /* Connection con = null;
         PreparedStatement pstmt = null;
         try {

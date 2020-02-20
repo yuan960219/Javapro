@@ -29,9 +29,9 @@ public class DogWeb {
         }else if(i==2){
             add(scanner);
         }else if(i==3){
-            //System.out.println("修改");
+            update(scanner);
         }else if(i==4){
-            //System.out.println("删除");
+            del(scanner);
         }else{
             System.exit(0);
         }
